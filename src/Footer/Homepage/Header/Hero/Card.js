@@ -1,7 +1,7 @@
 import Card2 from './Card2';
 import './Hero.css';
 import Card3 from './Card3';
-import { ReactComponent as MySvg }  from '../../../Assets/icon-brand-recognition.svg'
+import { ReactComponent as MySvg }  from '../../../../Assets/icon-brand-recognition.svg'
 
 const Card = () => {
     return(

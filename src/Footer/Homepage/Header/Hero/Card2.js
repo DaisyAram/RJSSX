@@ -1,5 +1,5 @@
 import './Hero.css';
-import { ReactComponent as MySvg} from '../../../Assets/icon-detailed-records.svg'
+import { ReactComponent as MySvg} from '../../../../Assets/icon-detailed-records.svg'
 const Card2 = () => {
     return (
         <>
