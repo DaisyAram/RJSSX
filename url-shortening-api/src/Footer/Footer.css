@@ -1,5 +1,5 @@
 :root {
-    --footer-bg: url('../../src/Assets/bg-boost-desktop.svg')
+    --footer-bg: url('../../src/Assets/bg-boost-desktop.svg');
     --footer-twitter-icon: url('../../src/Assets/icon-twitter.svg');
   }
   
@@ -9,7 +9,7 @@
     background-size: cover;
     align-items: center;
     color: white;
-    border: 10px;
+    border: 10px solid #250c29; 
     background-color:  #250c29;
     text-align: center;
     height: 24vh;   
