@@ -5,6 +5,11 @@ const InputForm = () => {
   const [input, setInput] = useState("");
   const [shortenedUrl, setShortenedUrl] = useState(null);
   const [error, setError] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  }
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,15 +25,13 @@ const InputForm = () => {
     }
 
     // Here you would typically call an API to shorten the URL
-    // For demonstration purposes, we'll just simulate this
     const shortenUrl = async () => {
       try {
-        // Simulating API call
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
         // Generate a random shortened URL (replace this with real API logic)
         const shortened = `https://shrt.co/${Math.random().toString(36).substr(2, 5)}`;
         setShortenedUrl(shortened);
+        toggleModal(); // Open modal immediately after setting the shortened URL
       } catch (err) {
         setError("Failed to shorten URL. Please try again.");
       }
@@ -53,10 +56,19 @@ const InputForm = () => {
         </button>
       </form>
       {error && <p className="error">{error}</p>}
-      {shortenedUrl && <p className="success">Your shortened URL: {shortenedUrl}</p>}
+      
+      {/* Modal */}
+      {modalVisible && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Your shortened URL:</h2>
+            <p>{shortenedUrl}</p>
+            <button onClick={toggleModal}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
 
 export default InputForm;
-
